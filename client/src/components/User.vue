@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot name="user" :user="this.user"></slot>
+    <slot name="user" :user="this.state.user"></slot>
   </div>
 </template>
 
