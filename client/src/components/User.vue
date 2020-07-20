@@ -1,6 +1,6 @@
 <template>
   <div>
-    <slot name="user" :user="this.state.user"></slot>
+    <slot name="user" :user="user"></slot>
   </div>
 </template>
 
@@ -9,13 +9,13 @@ import { auth } from "../firebase";
 import { ref } from "@vue/composition-api";
 
 export default {
-  data() {
+  /*data() {
     return {
       user : ref(null)
     };
-  },
+  },*/
   setup() {
-    const user = this.data().user;
+    const user = ref(null)/*this.user*/;
     const unsubscribe = auth.onAuthStateChanged(
       firebaseUser => (user.value = firebaseUser)
     );
